@@ -20,12 +20,14 @@ export const HandleLanguage: React.FC<HandleLanguageProps> = ({
         <Flags
           src={USAFlag}
           alt="Bandeira dos Estados Unidos"
+          title="English"
           onClick={() => toEnglish()}
         />
       ) : (
         <Flags
           src={BrazilFlag}
           alt="Bandeira do Brasil"
+          title="Portuguese"
           onClick={() => toPortuguese()}
         />
       )}
