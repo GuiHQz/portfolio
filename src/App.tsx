@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { i18n } from "./translate/i18n";
 
+import GlobalStyle from './styles/global'
 import { HandleLanguage } from "./components/HandleLanguage/HandleLanguage";
 
 const I18N_STORAGE_KEY = "i18nextLng";
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
       <h1>{i18n.t("titles.myName")}</h1>
       <HandleLanguage
         language={language}
