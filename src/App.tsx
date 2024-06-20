@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { i18n } from "./translate/i18n";
+import GlobalStyle from "./styles/global";
+import light from "./styles/themes/light";
+import { ThemeProvider } from "styled-components";
 
-import GlobalStyle from './styles/global'
+import { i18n } from "./translate/i18n";
 import { HandleLanguage } from "./components/HandleLanguage/HandleLanguage";
 
 const I18N_STORAGE_KEY = "i18nextLng";
@@ -25,7 +27,7 @@ const App = () => {
   }, [language, i18n]);
 
   return (
-    <>
+    <ThemeProvider theme={light}>
       <GlobalStyle />
       <h1>{i18n.t("titles.myName")}</h1>
       <HandleLanguage
@@ -33,7 +35,7 @@ const App = () => {
         toEnglish={() => handleLanguage("en-US")}
         toPortuguese={() => handleLanguage("pt-BR")}
       />
-    </>
+    </ThemeProvider>
   );
 };
 
