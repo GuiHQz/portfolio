@@ -5,8 +5,8 @@ import { Flags } from "./styles.ts";
 
 interface HandleLanguageProps {
   language: string;
-  toEnglish: () => void;
-  toPortuguese: () => void;
+  toEnglish(): void;
+  toPortuguese(): void;
 }
 
 export const HandleLanguage: React.FC<HandleLanguageProps> = ({
