@@ -1,3 +1,4 @@
+import { shade } from "polished";
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
@@ -19,11 +20,17 @@ export const NavbarContainer = styled.nav`
   }
 `;
 
-export const Logo = styled.div`
-
-`;
+export const Logo = styled.div``;
 
 export const Navlist = styled.ul`
+  cursor: pointer;
+
+  li {
+    &:hover {
+      color: ${(props) => shade(0.3, props.theme.colors.primary)};
+    }
+  }
+
   @media (max-width: 768px) {
     position: fixed;
     top: 0;
@@ -40,7 +47,7 @@ export const Navlist = styled.ul`
     gap: 0;
     pointer-events: none;
   }
-`
+`;
 
 export const Hamburger = styled.button`
   display: none;
