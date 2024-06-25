@@ -8,7 +8,6 @@ import { DefaultTheme, ThemeProvider } from "styled-components";
 
 import { i18n } from "./translate/i18n";
 import { Navbar } from "./components/Navbar/Navbar";
-import { HandleLanguage } from "./components/HandleLanguage/HandleLanguage";
 
 const I18N_STORAGE_KEY = "i18nextLng";
 
@@ -37,13 +36,13 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Navbar toggleTheme={toggleTheme} />
-      <h1>{i18n.t("titles.myName")}</h1>
-      <HandleLanguage
+      <Navbar
+        toggleTheme={toggleTheme}
         language={language}
         toEnglish={() => handleLanguage("en-US")}
         toPortuguese={() => handleLanguage("pt-BR")}
       />
+      <h1>{i18n.t("titles.myName")}</h1>
     </ThemeProvider>
   );
 };
